@@ -1,0 +1,11 @@
+{
+	"name": "practice-php",
+	// Dockerfileでイメージ・コンテナを作成
+	// "dockerFile": "../Dockerfile",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "app",
+    "workspaceFolder": "/var/www/html",
+    // リモート先のVS Codeにインストールする拡張機能
+	"extensions": [
+	]
+}
