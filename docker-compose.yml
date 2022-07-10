@@ -2,18 +2,20 @@ version: "3"
 services:
     web:
         image: nginx
+        container_name: practice-php-web
         depends_on:
             - app
         ports:
             - "8080:80"
         volumes:
-            - ./web/default.conf:/etc/nginx/conf.d/default.conf
-            - .:/var/www/html
+            - ./src:/var/www/html
+            - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
     app:
         image: php:8-fpm
+        container_name: practice-php-app
         volumes:
-            - .:/var/www/html
-            - ./app/php.ini:/usr/local/etc/php/php.ini
+            - ./src:/var/www/html
+            - ./docker/app/php.ini:/usr/local/etc/php/php.ini
         build:
             context: ./
-            dockerfile: Dockerfile
+            dockerfile: ./docker/app/Dockerfile
