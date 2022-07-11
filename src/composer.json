@@ -3,6 +3,7 @@
         "psr-4": {
             "Controllers\\" : "controllers/",
             "Models\\"      : "models/",
+            "Models\\Lineworks":"models/lineworks/",
             "Models\\Sub\\" : "models/sub/"
         }
     },

@@ -1,10 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 require './vendor/autoload.php';
 
 use Models\Env;
+use Models\lineworks\AccessToken;
 
 echo Env::get("GREETING");
+echo AccessToken::getAccessToken();
 
 // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 // $dotenv->load();
