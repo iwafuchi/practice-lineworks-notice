@@ -26,11 +26,13 @@ class AccessToken {
     }
     private function generateSignature(): string {
         $privateKey = file_exists(Env::get("PrivateKeyPath")) ? file_get_contents(Env::get("PrivateKeyPath")) : null;
-        // $privateKey = function () {
-        //     if (file_exists(Env::get("PrivateKeyPath"))) {
-        //         return file_get_contents(Env::get("PrivateKeyPath"));
-        //     }
-        // };
-        return "string";
+        $payload = [
+            "iss" => Env::get("ClientID"),
+            "sub" => Env::get("ServiceAccount"),
+            "iat" => $this->currentTime,
+            "exp" => $this->currentTime + 3600
+        ];
+        $signature = JWT::encode($payload, $privateKey, "RS256");
+        return $signature;
     }
 }
