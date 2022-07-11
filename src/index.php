@@ -8,7 +8,9 @@ use Models\Env;
 use Models\lineworks\AccessToken;
 
 echo Env::get("GREETING");
-echo AccessToken::getAccessToken();
+
+$accessToken = new AccessToken();
+$accessToken->getAccessToken();
 
 // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 // $dotenv->load();
