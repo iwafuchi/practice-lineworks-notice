@@ -2,10 +2,16 @@
 
 require './vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+use Models\Env;
 
-// .envファイルで定義したGREETINGを変数に代入
-$greeting = $_ENV['GREETING'];
+echo Env::get("GREETING");
 
-print ($greeting) . PHP_EOL;
+// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
+
+// echo phpinfo();
+// print_r($_ENV);
+// // .envファイルで定義したGREETINGを変数に代入
+// $greeting = $_ENV['GREETING'];
+
+// print ($greeting) . PHP_EOL;

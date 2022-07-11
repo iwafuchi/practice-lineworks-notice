@@ -1,4 +1,11 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Controllers\\" : "controllers/",
+            "Models\\"      : "models/",
+            "Models\\Sub\\" : "models/sub/"
+        }
+    },
     "require": {
         "vlucas/phpdotenv": "^5.4",
         "guzzlehttp/guzzle": "^7.4",
