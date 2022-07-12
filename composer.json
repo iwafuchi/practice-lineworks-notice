@@ -1,10 +1,10 @@
 {
     "autoload": {
         "psr-4": {
-            "Controllers\\" : "controllers/",
-            "Models\\"      : "models/",
-            "Models\\Lineworks\\":"models/lineworks/",
-            "Models\\Sub\\" : "models/sub/"
+            "Controllers\\" : "src/controllers/",
+            "Models\\"      : "src/models/",
+            "Models\\Lineworks\\":"src/models/lineworks/",
+            "Models\\Sub\\" : "src/models/sub/"
         }
     },
     "require": {

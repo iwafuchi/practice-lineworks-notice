@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Models\lineworks;
 
+require '../vendor/autoload.php';
+
 use Models\Env;
 use Firebase\JWT\JWT;
 use GuzzleHttp\Client;
