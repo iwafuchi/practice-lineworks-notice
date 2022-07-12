@@ -13,7 +13,8 @@ services:
     app:
         container_name: practice-lineworks-app
         volumes:
-            - ./src:/var/www/html
+            - ./src:/var/www/html/src
+            - ./test:/var/www/html/test
             - ./docker/app/php.ini:/usr/local/etc/php/php.ini
         build:
             context: ./
