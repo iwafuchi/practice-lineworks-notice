@@ -5,8 +5,7 @@ declare(strict_types=1);
 require '../vendor/autoload.php';
 
 use Models\Env;
-use Models\lineworks\AccessToken;
+use Models\lineworks\Notice;
 
-echo Env::get("GREETING");
-$accessToken = new AccessToken();
-$accessToken->getAccessToken();
+$notice = new Notice();
+echo $notice->notifyMessage("sho@iwafuchi", "こんにちは");

@@ -20,8 +20,7 @@ class AccessToken {
     private $currentTime;
     public function getAccessToken() {
         $this->currentTime = time();
-        print_r($this->requestAccessToken());
-        return $this->currentTime;
+        return $this->requestAccessToken();
     }
     private function requestAccessToken(): array {
         $signature = $this->generateSignature();
