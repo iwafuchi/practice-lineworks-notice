@@ -42,7 +42,7 @@ class Notice {
         $userMessageApi = "https://www.worksapis.com/v1.0/bots/${botId}/users/${userId}/messages";
         $headers = [
             "Content-Type" => "application/json",
-            "Authorization" => "Bearer " . $accessToken['access_token'],
+            "Authorization" => "Bearer " . $accessToken,
         ];
         $palyload = [
             "content" => [
