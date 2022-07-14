@@ -38,6 +38,7 @@ class AccessToken {
         //Lineworksのrefresh_tokenの有効期限が発行時点から90日
         $_SESSION["refresh_token_expires"] = $this->currentTime + (3600 * 24 * 90);
         return $_SESSION["access_token"];
+        return $this->fetchAccessToken()["access_token"];
     }
     /**
      * fetchAccessToken function

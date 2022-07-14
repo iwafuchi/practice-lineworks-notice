@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Models\lineworks;
 
+require '../vendor/autoload.php';
+
 use Models\lineworks\AccessToken;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -56,7 +58,7 @@ class Notice {
                 "headers" => $headers,
                 "json" => $palyload,
                 "http_errors" => false,
-                "verify" => false,
+                "verify" => false
             ]);
             if ($response->getStatusCode() === 201) {
                 http_response_code($response->getStatusCode());
