@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require_once "./src/Sample.php";
+require_once __DIR__ . "/../src/Sample.php";
 
 use PHPUnit\Framework\TestCase;
 use app\src\Sample;
