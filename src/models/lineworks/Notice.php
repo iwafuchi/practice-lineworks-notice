@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Models\lineworks;
 
-require '../vendor/autoload.php';
-
 use Models\lineworks\AccessToken;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;

@@ -6,7 +6,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Models\lineworks\Notice;
 
-
 ?>
 
 <!DOCTYPE html>
@@ -24,25 +23,23 @@ use Models\lineworks\Notice;
     <form method="post">
         <textarea name="message" rows="5" cols="40"></textarea>
         <p>
-            <button type="submit" name="fetch" value>送信</button>
+            <button type="submit" name="fetch" value="true">送信</button>
         </p>
     </form>
     <?php
-    if (isset($_POST["fetch"])) {
-        session_start();
-        session_regenerate_id();
-
-        if (!isset($_SESSION["count"])) {
-            $_SESSION["count"] = 0;
-        }
-        $_SESSION["count"] = $_SESSION["count"] + 1;
-        $notice = new Notice();
+    if (isset($_POST["fetch"]) && $_POST["fetch"]) {
         if (isset($_POST["message"]) && $_POST["message"]) {
+            session_start();
+            session_regenerate_id();
+            $notice = new Notice();
             echo $notice->notifyMessage("sho@iwafuchi", $_POST["message"]);
         }
-        if (isset($_POST["fetch"])) {
-            unset($_POST["fetch"]);
-        }
+    }
+    if (isset($_POST["fetch"])) {
+        unset($_POST["fetch"]);
+    }
+    if (isset($_POST["message"])) {
+        unset($_POST["message"]);
     }
     ?>
 </body>

@@ -6,8 +6,6 @@ namespace Models;
 
 use Dotenv\Dotenv;
 
-require '../vendor/autoload.php';
-
 class Env {
     private static $dotenv;
     public static function get($key) {

@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Models\lineworks;
 
-require '../vendor/autoload.php';
-
 use Models\Env;
 use Firebase\JWT\JWT;
 use GuzzleHttp\Client;
@@ -37,8 +35,7 @@ class AccessToken {
         $_SESSION["access_token_expires"] = $this->currentTime + $accessToken["expires_in"];
         //Lineworksのrefresh_tokenの有効期限が発行時点から90日
         $_SESSION["refresh_token_expires"] = $this->currentTime + (3600 * 24 * 90);
-        return $_SESSION["access_token"];
-        return $this->fetchAccessToken()["access_token"];
+        return $accessToken["access_token"];
     }
     /**
      * fetchAccessToken function
@@ -66,6 +63,8 @@ class AccessToken {
             $accessTokenUrl = "https://auth.worksmobile.com/oauth2/v2.0/token";
             $response = $client->request("POST", $accessTokenUrl, $option);
             if ($response->getStatusCode() === 200) {
+                echo "aaaaa";
+                print_r($response->getBody());
                 $result = json_decode($response->getBody()->getContents(), true);
                 return $result;
             }
